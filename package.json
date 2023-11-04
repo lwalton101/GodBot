@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prod": "ts-node index.ts",
     "run": "nodemon index.ts",
     "deploy": "ts-node deploy_commands.ts"
   },
