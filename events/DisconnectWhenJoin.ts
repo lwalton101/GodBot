@@ -1,0 +1,27 @@
+import {EventHandler} from "../EventHandler";
+import {Client, Events, VoiceState} from "discord.js";
+import {client} from "../discord";
+
+export const eventHandler: EventHandler = {
+    name: Events.VoiceStateUpdate,
+    once: false,
+    execute(oldState: VoiceState, newState: VoiceState){
+        if(!newState){
+            return;
+        }
+
+        if(!newState.channel){
+            return;
+        }
+
+        if(!newState.channel.members){
+            return;
+        }
+
+        newState.channel.members.forEach((value, key, map) => {
+            if(value.id == ""){
+                value.voice.disconnect();
+            }
+        });
+    }
+}
