@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import {Client, Collection, Events, GatewayIntentBits, Partials} from "discord.js";
-import {token} from "./config.json";
+import {token} from "./config/config.json";
 import {Command} from "./Command";
 import {EventHandler} from "./EventHandler";
 
