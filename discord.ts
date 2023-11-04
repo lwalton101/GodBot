@@ -4,6 +4,7 @@ import {Client, Collection, Events, GatewayIntentBits, Partials} from "discord.j
 import {token} from "./config/config.json";
 import {Command} from "./Command";
 import {EventHandler} from "./EventHandler";
+import {deployCommands} from "./deploy_commands";
 
 export const client = new Client({ intents: ["Guilds", "GuildVoiceStates", "GuildMessages", "GuildMembers", "MessageContent", "MessageContent", "GuildMessageReactions"], partials: [Partials.Message, Partials.Channel, Partials.Reaction, Partials.GuildMember] });
 
@@ -62,5 +63,6 @@ client.on(Events.InteractionCreate, async interaction => {
 
 // Log in to Discord with your client's token
 export function setup(){
+	deployCommands();
     client.login(token);
 }
