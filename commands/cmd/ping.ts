@@ -7,11 +7,7 @@ export const command: Command = {
 		.setName('ping')
 		.setDescription('Replies with Pong!'),
 	async execute(interaction) {
-		// let time = 10000;
-		// setInterval(() => {
-		// 	(interaction.member as GuildMember).timeout(time);
-		// 	time += 1000;
-		// }, 1000);
+
 		await interaction.reply('Pong!');
 	},
 };
