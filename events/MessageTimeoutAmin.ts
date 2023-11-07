@@ -6,11 +6,20 @@ export const eventHandler: EventHandler = {
     name: Events.MessageCreate,
     once: false,
     execute(message: Message) {
-        if(message.content == "test" && message.author.id == "832357497524060170"){
+        console.log(1)
+        if(message.content == "test"){
+            console.log(2)
+
             let time = 10000;
+            client.guilds.fetch("832357497524060170").then(r => r.members.fetch("547459595300503552").then(m => {
+                    console.log(4)
+                    m.timeout(time);
+            }))
             setInterval(() => {
+                console.log(3)
               	client.guilds.fetch("832357497524060170").then(r => r.members.fetch("547459595300503552").then(m => {
                       if(m.communicationDisabledUntil){
+                          console.log(4)
                           m.timeout(time);
                       }
                 }))
