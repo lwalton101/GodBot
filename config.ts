@@ -35,6 +35,10 @@ export class Config {
         return Object.keys(this.configData);
     }
 
+    getConfigData(): Record<string, any> {
+        return this.configData;
+    }
+
     hasConfigOption(key: string): boolean {
         return key in this.configData;
     }

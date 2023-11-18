@@ -23,3 +23,7 @@ export function setConfigValue(req: express.Request<{}, {}, SetConfigValueModel>
         res.status(400).send({message: "Value " + req.body.optionName + " does not exist"});
     }
 }
+
+export function getConfigValues(req: express.Request, res: express.Response){
+    res.status(200).send({configValues: config.getConfigData()});
+}
