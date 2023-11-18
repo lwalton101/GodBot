@@ -1,6 +1,7 @@
 import {EventHandler} from "../EventHandler";
 import {Client, Events, VoiceState} from "discord.js";
 import {client} from "../discord";
+import {config} from "../index";
 
 export const eventHandler: EventHandler = {
     name: Events.VoiceStateUpdate,
@@ -19,9 +20,12 @@ export const eventHandler: EventHandler = {
         }
 
         newState.channel.members.forEach((value, key, map) => {
-            if(value.id == ""){
-                value.voice.disconnect();
+            for(let id of config.getConfigOption("disconnectWhenJoin").split(",")){
+                if(value.id == id){
+                    value.voice.disconnect();
+                }
             }
+
         });
     }
 }
