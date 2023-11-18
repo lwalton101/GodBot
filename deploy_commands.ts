@@ -35,7 +35,7 @@ export function deployCommands(){
 
 			// The put method is used to fully refresh all commands in the guild with the current set
 			await rest.put(
-				Routes.applicationCommands(clientId),
+				Routes.applicationCommands(clientId.toString()),
 				{ body: commands },
 			);
 		} catch (error) {
