@@ -1,19 +1,12 @@
 const configDiv = document.getElementById("configDiv");
-function isNumeric(str) {
-    return !isNaN(str) && !isNaN(parseFloat(str));
-}
 function OnInput(e){
     console.log(e.target.id);
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    let value = e.target.value
-    if(isNumeric(value)){
-        value = Number.parseFloat(value);
-    }
 
     var raw = JSON.stringify({
         "optionName": e.target.id,
-        "value": value
+        "value": e.target.value
     });
 
     var requestOptions = {
