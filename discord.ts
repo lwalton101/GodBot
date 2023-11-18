@@ -61,6 +61,7 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 });
 
+
 // Log in to Discord with your client's token
 export function setup(){
 	deployCommands();
