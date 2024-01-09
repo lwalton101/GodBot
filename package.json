@@ -6,7 +6,7 @@
   "scripts": {
     "prod": "ts-node index.ts",
     "run": "nodemon index.ts --ext ts",
-    "deploy": "ts-node deploy_commands.ts"
+    "deploy": "ts-node deploy.ts"
   },
   "keywords": [],
   "author": "",

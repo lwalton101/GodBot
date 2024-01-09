@@ -1,7 +1,7 @@
 import {EventHandler} from "../EventHandler";
 import {Client, Events, Message, MessageReaction, User} from "discord.js";
 
-export const eventHandler: EventHandler = {
+export const eventHandler: EventHandler<Events.MessageCreate> = {
     name: Events.MessageCreate,
     once: false,
     execute(message: Message){

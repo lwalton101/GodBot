@@ -1,8 +1,9 @@
-import {Command} from "../../Command";
+import {Command} from "../Command";
 
 const { SlashCommandBuilder } = require('discord.js');
 
 export const command : Command = {
+	admin: false,
 	data: new SlashCommandBuilder()
 		.setName('server')
 		.setDescription('Provides information about the server.'),

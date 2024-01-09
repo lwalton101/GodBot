@@ -1,9 +1,10 @@
-import {Command} from "../../Command";
+import {Command} from "../Command";
 import {GuildMember} from "discord.js";
 
 const { SlashCommandBuilder } = require('discord.js');
 
 export const command: Command = {
+	admin:false,
 	data: new SlashCommandBuilder()
 		.setName('user')
 		.setDescription('Provides information about the user.'),

@@ -1,8 +1,9 @@
-import {Command} from "../../Command";
+import {Command} from "../Command";
 import {GuildMember, SlashCommandBuilder} from "discord.js";
 
 
 export const command: Command = {
+	admin: false,
 	data: new SlashCommandBuilder()
 		.setName('ping')
 		.setDescription('Replies with Pong!'),

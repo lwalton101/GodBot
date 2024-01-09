@@ -1,9 +1,9 @@
 import { app } from "./app";
 import { setup } from "./discord";
 import {Config} from "./config";
+import {deployCommands} from "./deploy_commands";
 
 export const config = new Config("./config/config.json");
-console.log(config.getAllConfigOptions())
 const port = process.env.PORT || '3000'
 app.listen(port, () => {
 	console.log(`App Listening on port ${port}`)

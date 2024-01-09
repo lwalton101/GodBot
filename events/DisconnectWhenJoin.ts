@@ -3,7 +3,7 @@ import {Client, Events, VoiceState} from "discord.js";
 import {client} from "../discord";
 import {config} from "../index";
 
-export const eventHandler: EventHandler = {
+export const eventHandler: EventHandler<Events.VoiceStateUpdate> = {
     name: Events.VoiceStateUpdate,
     once: false,
     execute(oldState: VoiceState, newState: VoiceState){
@@ -25,7 +25,6 @@ export const eventHandler: EventHandler = {
                     value.voice.disconnect();
                 }
             }
-
         });
     }
 }

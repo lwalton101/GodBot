@@ -2,7 +2,7 @@ import {EventHandler} from "../EventHandler";
 import {Client, Events, GuildMember} from "discord.js";
 import {config} from "../index";
 
-export const eventHandler: EventHandler = {
+export const eventHandler: EventHandler<Events.GuildMemberUpdate> = {
     name: Events.GuildMemberUpdate,
     once: false,
     execute(oldMember: GuildMember, newMember: GuildMember){

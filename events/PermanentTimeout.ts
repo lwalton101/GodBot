@@ -3,7 +3,7 @@ import {Events, Message} from "discord.js";
 import {config} from "../index";
 import {client} from "../discord";
 
-export const eventHandler: EventHandler = {
+export const eventHandler: EventHandler<Events.ClientReady> = {
     name: Events.ClientReady,
     once: false,
     async execute() {
