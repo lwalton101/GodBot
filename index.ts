@@ -1,7 +1,6 @@
 import { app } from "./app";
 import { setup } from "./discord";
 import {Config} from "./config";
-import {deployCommands} from "./deploy_commands";
 
 export const config = new Config("./config/config.json");
 const port = process.env.PORT || '3000'

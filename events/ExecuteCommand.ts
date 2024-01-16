@@ -1,6 +1,7 @@
 import {EventHandler} from "../EventHandler";
 import {Client, Events} from "discord.js";
 import {getCommandByName, getCommands} from "../deploy_commands";
+import {errorLog, infoLog} from "../log";
 
 export const eventHandler: EventHandler<Events.InteractionCreate> = {
     name: Events.InteractionCreate,
@@ -14,9 +15,11 @@ export const eventHandler: EventHandler<Events.InteractionCreate> = {
         }
 
         try {
+            await infoLog(`User <@${interaction.user.id}> used command ${interaction.commandName}`);
             await command.execute(interaction);
         } catch (error) {
             console.error(error);
+            await errorLog(`An error occurred during command ${interaction.commandName}\n`+ error.toString())
             if (interaction.replied || interaction.deferred) {
                 await interaction.followUp({
                     content: 'There was an error while executing this command!',
