@@ -27,7 +27,7 @@ export class Config {
         this.saveConfig();
     }
 
-    getConfigOption(key: string): any {
+    getConfigOption(key: string): string {
         return this.configData[key];
     }
 
