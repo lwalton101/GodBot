@@ -9,20 +9,23 @@ export const command: Command = {
         .setDescription('Deletes a Message')
         .addStringOption(option =>
                 option
-                    .setName("guildId")
+                    .setName("guild_id")
+                    .setDescription("The Guild ID")
                     .setRequired(true))
         .addStringOption(option =>
             option
-                .setName("channelId")
+                .setName("channel_id")
+                .setDescription("The Channel ID")
                 .setRequired(true)
         ).addStringOption(option =>
             option
-                .setName("messageId")
+                .setName("message_id")
+                .setDescription("The Message ID")
                 .setRequired(true)),
     async execute(interaction) {
-        const guildId = interaction.options.getString("channelId");
-        const channelId = interaction.options.getString("channelId");
-        const messageId = interaction.options.getString("channelId");
+        const guildId = interaction.options.getString("guild_id");
+        const channelId = interaction.options.getString("channel_id");
+        const messageId = interaction.options.getString("message_id");
 
         const guild = await client.guilds.fetch(guildId);
 
@@ -49,5 +52,9 @@ export const command: Command = {
         }
 
         await message.delete();
+        await interaction.reply({
+            content: "Deleted message",
+            ephemeral: true
+        })
     },
 };

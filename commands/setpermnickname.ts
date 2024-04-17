@@ -1,7 +1,6 @@
 import {Command} from "../Command";
 import {SlashCommandBuilder} from "discord.js";
 import {errorLog} from "../log";
-import {config} from "../index";
 
 export const command: Command = {
     admin: true,
@@ -30,8 +29,8 @@ export const command: Command = {
         const guildMember = await guild.members.fetch(userId);
 
         await interaction.reply(`Set ${guildMember.user.tag}'s name to ${name} permanently`);
-        config.getConfigOption("permanentNicknames").split(";").forEach(s => {
-            var splitString = s.split(",")
-        })
+        // config.getConfigOption("permanentNicknames").split(";").forEach(s => {
+        //     var splitString = s.split(",")
+        // })
     },
 };
