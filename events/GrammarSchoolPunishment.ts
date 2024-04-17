@@ -22,7 +22,7 @@ export const eventHandler: EventHandler<Events.MessageCreate> = {
     name: Events.MessageCreate,
     once: false,
     async execute(message: Message){
-        if(message.content.toLowerCase().includes("grammar school") && message.author.id == "1140794078271897621"){
+        if(message.content.toLowerCase().includes("grammar") && message.author.id == "1140794078271897621"){
             const randomElement = getRandomElement(grammarMemes);
             await message.reply({embeds: [{title: "EPIC GRAMMAR MEME!1!1!11!!11!11!1", image: {url: randomElement}}]})
         }
