@@ -20,15 +20,15 @@ export const command: Command = {
                 .setDescription("The name that will be permanently set")
                 .setRequired(true)),
     async execute(interaction) {
-        const guildId = interaction.options.getString("guild_id");
-        const userId = interaction.options.getString("user_id");
-        const name = interaction.options.getString("name");
-
-        const guild = await interaction.client.guilds.fetch(guildId);
-        
-        const guildMember = await guild.members.fetch(userId);
-
-        await interaction.reply(`Set ${guildMember.user.tag}'s name to ${name} permanently`);
+        // const guildId = interaction.options.getString("guild_id");
+        // const userId = interaction.options.getString("user_id");
+        // const name = interaction.options.getString("name");
+        //
+        // const guild = await interaction.client.guilds.fetch(guildId);
+        //
+        // const guildMember = await guild.members.fetch(userId);
+        //
+        // await interaction.reply(`Set ${guildMember.user.tag}'s name to ${name} permanently`);
         // config.getConfigOption("permanentNicknames").split(";").forEach(s => {
         //     var splitString = s.split(",")
         // })

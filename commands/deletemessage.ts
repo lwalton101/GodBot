@@ -1,6 +1,7 @@
 import {Command} from "../Command";
 import {SlashCommandBuilder, TextChannel} from "discord.js";
 import {client} from "../discord";
+import {type} from "os";
 
 export const command: Command = {
     admin: true,
@@ -23,9 +24,10 @@ export const command: Command = {
                 .setDescription("The Message ID")
                 .setRequired(true)),
     async execute(interaction) {
-        const guildId = interaction.options.getString("guild_id");
-        const channelId = interaction.options.getString("channel_id");
-        const messageId = interaction.options.getString("message_id");
+        if(!interaction.isChatInputCommand()){ return;}
+        const guildId: any = interaction.options.getString("guild_id");
+        const channelId: any = interaction.options.getString("channel_id");
+        const messageId: any = interaction.options.getString("message_id");
 
         const guild = await client.guilds.fetch(guildId);
 

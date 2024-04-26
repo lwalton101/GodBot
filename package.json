@@ -4,7 +4,7 @@
    "description": "",
    "main": "index.js",
    "scripts": {
-      "prod": "ts-node index.ts --resolveJsonModule",
+      "prod": "ts-node index.ts --resolveJsonModule --downlevelIteration",
       "run": "nodemon index.ts --ext ts",
       "deploy": "ts-node deploy.ts",
       "start": "ts-node src/index.ts",
@@ -18,7 +18,8 @@
       "@types/express": "^4.17.20",
       "body-parser": "^1.20.2",
       "cors": "^2.8.5",
-      "discord.js": "^14.13.0",
+      "discord-api-types": "^0.37.82",
+      "discord.js": "^14.14.1",
       "express": "^4.18.2",
       "nodemon": "^3.0.1",
       "reflect-metadata": "^0.1.13",
@@ -26,11 +27,10 @@
       "ts-dotenv": "^0.9.1",
       "ts-node": "^10.9.1",
       "typeorm": "0.3.20",
-      "typescript": "^5.2.2"
+      "typescript": "^5.4.5"
    },
    "devDependencies": {
       "@types/node": "^16.11.10",
-      "ts-node": "10.9.1",
-      "typescript": "4.5.2"
+      "ts-node": "10.9.1"
    }
 }
