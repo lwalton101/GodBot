@@ -8,4 +8,6 @@ export class WordUser{
     userId: string
     @Column()
     word: string
+    @Column()
+    count: number
 }

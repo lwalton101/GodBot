@@ -1,7 +1,16 @@
+
+import { load } from "ts-dotenv"
+export const env = load({
+    MYSQL_IP: String,
+    MYSQL_USERNAME: String,
+    MYSQL_PASSWORD: String,
+});
+console.log("env")
+
 import { app } from "./app";
 import { setup } from "./discord";
-import {db, wordUserRepo} from "./data-source"
-import { load } from "ts-dotenv"
+import {db} from "./data-source"
+
 import {WordUser} from "./entities/WordUser";
 
 
@@ -11,11 +20,7 @@ app.listen(port, () => {
     console.log(`http://localhost:3000`)
 });
 
-export const env = load({
-    MYSQL_IP: String,
-    MYSQL_USERNAME: String,
-    MYSQL_PASSWORD: String,
-});
+
 
 db.initialize().then(async () => {
     console.log("DB Online");
