@@ -1,7 +1,7 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
 import {WordUser} from "./entities/WordUser";
-import {env} from "./index";
+import {env} from "./env";
 
 export const db = new DataSource({
     type: "mysql",

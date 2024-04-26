@@ -1,9 +1,9 @@
 import {Client, ClientEvents, GatewayIntentBits, Partials} from "discord.js";
-import {token} from "./config/config.json";
 import path from "node:path";
 import fs from "node:fs";
 import {EventHandler} from "./EventHandler";
 import {successLog} from "./log";
+import {env} from "./env";
 
 export const client = new Client({ intents: ["Guilds", "GuildVoiceStates", "GuildMessages", "GuildMembers", "MessageContent", "MessageContent", "GuildMessageReactions"], partials: [Partials.Message, Partials.Channel, Partials.Reaction, Partials.GuildMember] });
 
@@ -63,6 +63,6 @@ for (const file of eventFiles) {
 
 // Log in to Discord with your client's token
 export async function setup() {
-	await client.login(token);
+	await client.login(env.DISCORD_BOT_TOKEN);
 	await successLog("God bot turned on!");
 }

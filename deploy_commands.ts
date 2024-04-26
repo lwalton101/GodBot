@@ -1,9 +1,10 @@
 import {REST, Routes} from "discord.js";
-import {token,clientId,debugGuildId} from "./config/config.json"
+import {clientId,debugGuildId} from "./config/config.json"
 import fs from "node:fs";
 import path from "node:path";
 import {Command} from "./Command";
-const rest = new REST().setToken(token);
+import {env} from "./env";
+const rest = new REST().setToken(env.DISCORD_BOT_TOKEN);
 const commands: Command[] = [];
 export function getCommands(){
 	if(commands.length > 0){
