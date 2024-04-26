@@ -86,17 +86,19 @@ export const command: Command = {
         let wordUsers: WordUser[] = []
         for(let [authorId, t] of authorWord.entries()){
             for(let [word,count] of t){
-                let authorWordCount = t.get(word);
+                if(word.length > 25){
+                    continue;
+                }
                 let wu = wordUserRepo.create({
                     userId: authorId,
                     word: word,
-                    count: authorWordCount
+                    count: count
                 })
                 wordUsers.push(wu);
             }
         }
 
-       await wordUserRepo.save(wordUsers);
+        await wordUserRepo.save(wordUsers);
         console.log("done")
     },
 };
