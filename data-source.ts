@@ -1,6 +1,5 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import { User } from "./entity/User"
 import {WordUser} from "./entities/WordUser";
 import {env} from "./index";
 
@@ -12,7 +11,7 @@ export const db = new DataSource({
     database: "godbot",
     synchronize: true,
     logging: false,
-    entities: [User, WordUser],
+    entities: [WordUser],
     migrations: [],
     subscribers: [],
 })
