@@ -1,7 +1,7 @@
 import { app } from "./app";
 import { setup } from "./discord";
 import {db, wordUserRepo} from "./data-source"
-import { User } from "./entity/User"
+import { load } from "ts-dotenv"
 import {WordUser} from "./entities/WordUser";
 
 
@@ -11,6 +11,11 @@ app.listen(port, () => {
     console.log(`http://localhost:3000`)
 });
 
+export const env = load({
+    MYSQL_IP: String,
+    MYSQL_USERNAME: String,
+    MYSQL_PASSWORD: String,
+});
 
 db.initialize().then(async () => {
     console.log("DB Online");
