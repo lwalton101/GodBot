@@ -1,13 +1,5 @@
 import {Command} from "../Command";
-import {
-    Collection,
-    GuildMember, Message,
-    NonThreadGuildBasedChannel,
-    Partials,
-    SlashCommandBuilder,
-    TextChannel,
-    User
-} from "discord.js";
+import {Message, SlashCommandBuilder,} from "discord.js";
 import {client} from "../discord";
 import {infoLog} from "../log";
 import {wordUserRepo} from "../data-source";
@@ -89,6 +81,7 @@ export const command: Command = {
                 if(word.length > 25){
                     continue;
                 }
+                word = Buffer.from(word, 'utf-8').toString();
                 let wu = wordUserRepo.create({
                     userId: authorId,
                     word: word,
