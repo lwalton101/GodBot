@@ -1,6 +1,7 @@
 import { app } from "./app";
 import { setup } from "./discord";
 import {db} from "./data-source"
+import {init} from "./plugin_util";
 
 
 
@@ -10,7 +11,7 @@ app.listen(port, () => {
     console.log(`http://localhost:3000`)
 });
 
-
+init();
 
 db.initialize().then(async () => {
     console.log("DB Online");
