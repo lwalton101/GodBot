@@ -22,7 +22,7 @@ export const eventHandler: EventHandler<Events.MessageCreate> = {
                 var wordUser = await wordUserRepo.save([{
                     userId: message.author.id,
                     word: string,
-                    count: 0
+                    count: 1
                 }])
             }
 
