@@ -90,8 +90,14 @@ export const command: Command = {
                 wordUsers.push(wu);
             }
         }
+        for (let wordUser of wordUsers) {
+            try{
+                await wordUserRepo.save(wordUser);
+            } catch (e){
+                console.log("AHHHH ERROR")
+            }
 
-        await wordUserRepo.save(wordUsers);
+        }
         console.log("done")
     },
 };
